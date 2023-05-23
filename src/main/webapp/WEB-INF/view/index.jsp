@@ -1,6 +1,9 @@
 <html>
+<head>
+</head>
 <body>
-<h2>Hello World!</h2>
-<h3>Welcome to home page. jsp</h3>
+<marquee>
+Server is running...
+</marquee>
 </body>
 </html>
