@@ -41,6 +41,7 @@ public class UserDao {
 			user.setUserName(rs.getString("t2"));
 			user.setPassword(rs.getString("t3"));
 			user.setUserSyskey(rs.getString("usersyskey"));
+			user.setStatus(rs.getInt("n1"));
 
 			users.add(user);
 		}

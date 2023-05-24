@@ -5,20 +5,24 @@ public class User {
 	private String syskey;
 	private String createdDate;
 	private String modifiedDate;
+	private String recordStatus;
 	private String userId;
 	private String userName;
 	private String password;
 	private String userSyskey;
+	private int status;
 
 	public User() {
 		super();
 		this.syskey = "0";
 		this.createdDate = "";
 		this.modifiedDate = "";
+		this.recordStatus = "1";
 		this.userId = "";
 		this.userName = "";
 		this.password = "";
 		this.userSyskey = "0";
+		this.status = 1;
 	}
 
 	public String getSyskey() {
@@ -42,6 +46,14 @@ public class User {
 
 	public void setModifiedDate(String modifiedDate) {
 		this.modifiedDate = modifiedDate;
+	}
+
+	public String getRecordStatus() {
+		return recordStatus;
+	}
+
+	public void setRecordStatus(String recordStatus) {
+		this.recordStatus = recordStatus;
 	}
 
 	public String getUserId() {
@@ -69,5 +81,12 @@ public class User {
 
 	public void setUserSyskey(String userSyskey) {
 		this.userSyskey = userSyskey;
+	}
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
 	}
 }
