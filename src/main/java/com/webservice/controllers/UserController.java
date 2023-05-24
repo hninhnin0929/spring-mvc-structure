@@ -1,11 +1,8 @@
 package com.webservice.controllers;
 
-
 import java.util.HashMap;
 
-
 import javax.servlet.http.HttpServletRequest;
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -24,8 +21,7 @@ public class UserController {
 
 	@GetMapping("/getUser")
 	public HashMap<String, Object> user(HttpServletRequest request) {
-		
-		System.out.println("User Page Controller");	
+			
 		return userService.getUser();
 	}
 

@@ -20,7 +20,7 @@ public class UserService {
 	private DataSource dataSource;
 	
 	public HashMap<String, Object> getUser() {
-		System.out.println("User Service");
+
 		HashMap<String, Object> result = new HashMap<>();
 		
 		try (Connection conn  = dataSource.getConnection();) {
@@ -28,12 +28,15 @@ public class UserService {
 //			conn.setAutoCommit(false);
 			result = userDao.getUser(conn);
 			
+			result.put("status", 200);
 			result.put("message", "SUCCESS");
 
 		} catch (Exception e) {
+			result.put("status", 300);
+			result.put("message", "FAIL");
 			e.printStackTrace();
+			
 		} 
-
 
 		return result;		
 		

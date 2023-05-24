@@ -20,32 +20,32 @@ public class UserDao {
 //		System.out.println("setDataSouce");
 //		this.dataSource = dataSource;
 //	}
-	
-	public UserDao(){
 
-	}
-	
 	public HashMap<String, Object> getUser(Connection conn) throws SQLException {
 		
 		User user = new User();
 		List<User> users = new ArrayList<User>();
 		HashMap<String, Object> result = new HashMap<>();
-		String query = "select * from uvm001";		
+		
+		String query = "select * from urd001";		
 
 		PreparedStatement stmt = conn.prepareStatement(query);
 		ResultSet rs = stmt.executeQuery();
+		
 		while (rs.next()) {
 			user = new User();
 			user.setSyskey(rs.getString("syskey"));
-			user.setUserName(rs.getString("username"));
-			user.setFirstName(rs.getString("firstname"));
-			user.setLastName(rs.getString("lastname"));
-			user.setPassword(rs.getString("password"));
-			System.out.println(user.getUserName());
+			user.setCreatedDate(rs.getString("createddate"));
+			user.setModifiedDate(rs.getString("modifieddate"));
+			user.setUserId(rs.getString("t1"));
+			user.setUserName(rs.getString("t2"));
+			user.setPassword(rs.getString("t3"));
+			user.setUserSyskey(rs.getString("usersyskey"));
+
 			users.add(user);
 		}
 		result.put("users", users);
-		System.out.println(users);
+		
 		return result;
 	}
 
