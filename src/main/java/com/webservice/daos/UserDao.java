@@ -33,7 +33,6 @@ public class UserDao {
 		String query = "select * from uvm001";		
 
 		PreparedStatement stmt = conn.prepareStatement(query);
-//		ps.setInt(1, id);
 		ResultSet rs = stmt.executeQuery();
 		while (rs.next()) {
 			user = new User();
